@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baijiu Encyclopedia — The World's Most Consumed Spirit, Explained</title>
+  <meta name="description" content="An independent educational resource on Baijiu and Chinese wines — history, aroma types, regions, producers, and culture. Available in English, French, and Chinese." />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+
+  <style>
+    /* Critical above-fold styles */
+    #app { min-height: 100vh; }
+    .page-loader { position: fixed; inset: 0; background: #FAF8F4; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.4s; }
+    .page-loader.done { opacity: 0; pointer-events: none; }
+    .loader-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #0D0D0D; letter-spacing: 0.1em; opacity: 0.4; }
+  </style>
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="page-loader">
+  <div class="loader-text">白酒</div>
+</div>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<header id="main-navbar" class="on-dark">
+  <div class="navbar-inner">
+
+    <!-- LOGO -->
+    <a href="/" data-nav="/" class="nav-logo">
+      <img class="nav-logo-img" src="/logo/logo.png" alt="Baijiu Encyclopedia" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">
+        <div style="font-size:1rem;letter-spacing:0.05em;">Baijiu</div>
+        <div style="font-size:0.65rem;letter-spacing:0.15em;opacity:0.55;text-transform:uppercase;">Encyclopedia</div>
+      </div>
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-center" id="desktop-nav">
+      <a href="/"             data-nav="/"             class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/prestige-academie"   data-nav="/prestige-academie"   class="nav-link" data-i18n="nav.academie">Academy</a>
+      <a href="/baijiu"       data-nav="/baijiu"        class="nav-link" data-i18n="nav.baijiu">Baijiu</a>
+      <a href="/chinese-wine" data-nav="/chinese-wine"  class="nav-link" data-i18n="nav.wine">Chinese Wine</a>
+
+      <!-- DROPDOWN: Programme -->
+      <div class="nav-dropdown" id="nav-dropdown">
+        <button class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" data-i18n="nav.programme">
+          Programme <span class="nav-dropdown-arrow">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/private-expositions" data-nav="/private-expositions" class="nav-dropdown-item" role="menuitem" data-i18n="nav.expositions">Exhibition</a>
+          <a href="/events"              data-nav="/events"              class="nav-dropdown-item" role="menuitem" data-i18n="nav.events">Events</a>
+          <a href="/producteurs"         data-nav="/producteurs"         class="nav-dropdown-item" role="menuitem" data-i18n="nav.producteurs">Producteurs</a>
+        </div>
+      </div>
+
+      <a href="/contact" data-nav="/contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <!-- RIGHT: LANG + HAMBURGER -->
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu">
+    <div class="mobile-inner" id="mobile-nav">
+      <a href="/"             data-nav="/"             data-i18n="nav.home">Home</a>
+      <a href="/prestige-academie"   data-nav="/prestige-academie"  data-i18n="nav.academie">Academy</a>
+      <a href="/baijiu"       data-nav="/baijiu"        data-i18n="nav.baijiu">Baijiu</a>
+      <a href="/chinese-wine" data-nav="/chinese-wine"  data-i18n="nav.wine">Chinese Wine</a>
+      <div class="mobile-section-label" data-i18n="nav.programme">Actualité</div>
+      <a href="/private-expositions" data-nav="/private-expositions" class="mobile-sub" data-i18n="nav.expositions">Exhibition</a>
+      <a href="/events"              data-nav="/events"              class="mobile-sub" data-i18n="nav.events">Events</a>
+      <a href="/producteurs"         data-nav="/producteurs"         class="mobile-sub" data-i18n="nav.producteurs">Producteurs</a>
+      <a href="/contact"             data-nav="/contact"             data-i18n="nav.contact">Contact</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ APP ═══════════════════════ -->
+<div id="app"></div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer id="site-footer">
+  <div class="wrapper">
+    <div class="footer-grid">
+
+      <!-- BRAND -->
+      <div>
+        <img class="footer-logo" src="/logo/logo.png" alt="Baijiu Encyclopedia" onerror="this.style.display='none'" />
+        <p class="footer-tagline" data-i18n="footer.tagline">An independent educational resource on Baijiu & Chinese wines.</p>
+      </div>
+
+      <!-- NAV -->
+      <div>
+        <p class="footer-nav-title" data-i18n="footer.navTitle">Navigation</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="/"                    data-nav="/"                    data-i18n="nav.home">Home</a></li>
+            <li><a href="/baijiu"              data-nav="/baijiu"              data-i18n="nav.baijiu">Baijiu</a></li>
+            <li><a href="/chinese-wine"        data-nav="/chinese-wine"        data-i18n="nav.wine">Chinese Wine</a></li>
+            <li><a href="/private-expositions" data-nav="/private-expositions" data-i18n="nav.expositions">Exhibition</a></li>
+            <li><a href="/events"              data-nav="/events"              data-i18n="nav.events">Events</a></li>
+            <li><a href="/prestige-academie"   data-nav="/prestige-academie"   data-i18n="nav.academie">Academy</a></li>
+            <li><a href="/contact"             data-nav="/contact"             data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <p class="footer-nav-title" data-i18n="footer.contactTitle">Contact</p>
+        <a href="mailto: contact@baijiuacademy.com" class="footer-email">Contact@baijiuacademy.com</a>
+        <p style="font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin-top:0.25rem;">+33 6 00 00 00 00</p>
+        <p style="margin-top:1.5rem;font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.15em;text-transform:uppercase;" data-i18n="footer.legal">Independent · Factual · Non-commercial</p>
+      </div>
+
+    </div>
+
+    <div class="footer-copy">
+      <p data-i18n="footer.copy">© 2024 — Educational Resource on Baijiu & Chinese Wines</p>
+      <p>白酒百科 · 中国葡萄酒</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  // Hide loader after page loads
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('page-loader');
+      if (loader) loader.classList.add('done');
+      setTimeout(() => { if (loader) loader.remove(); }, 400);
+    }, 300);
+  });
+
+  // Scroll-to-top visibility
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Dropdown: toggle on click, close on outside click or Escape
+  const dropdown = document.getElementById('nav-dropdown');
+  const trigger  = dropdown?.querySelector('.nav-dropdown-trigger');
+  function closeDropdown() {
+    dropdown?.classList.remove('open');
+    trigger?.setAttribute('aria-expanded', 'false');
+  }
+  trigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(isOpen));
+  });
+  // Single delegated click: close dropdown on outside click, but let nav-dropdown-items propagate normally
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#nav-dropdown')) closeDropdown();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDropdown(); });
+</script>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
+  

@@ -7,7 +7,7 @@ export const VIDEOS = {
   general_aroma : "https://www.youtube.com/watch?v=2LPcQLaeb5k&t=45s",
 };
 
-export const CONTACT = { email: "contact@baijiuacademy.com", phone: "+33 6 00 00 00 00" };
+export const CONTACT = { email: "contact@baijiuacademy.com", phone: "+33 7 83 84 99 31" };
 
 export const T = {
 en: {

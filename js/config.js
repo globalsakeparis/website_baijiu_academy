@@ -237,7 +237,7 @@ en: {
     title:"Get in Touch",
     lead:"Questions, corrections, or collaboration proposals — we read every message.",
     email:"Contact@baijiuacademy.com",
-    phone:"+33 6 00 00 00 00",
+    phone:"+33 7 83 84 99 31",
   },
   footer: {
     tagline:"An independent educational resource on Baijiu & Chinese wines.",
@@ -475,7 +475,7 @@ fr: {
     title:"Nous contacter",
     lead:"Questions, corrections ou propositions de collaboration — nous lisons chaque message.",
     email:"Contact@baijiuacademy.com",
-    phone:"+33 6 00 00 00 00",
+    phone:"+33 7 83 84 99 31",
   },
   footer: {
     tagline:"Une ressource éducative indépendante sur le Baijiu & les vins chinois.",
@@ -714,7 +714,7 @@ zh: {
     title:"联系我们",
     lead:"问题、更正或合作建议——我们阅读每一封消息。",
     email:"Contact@baijiuacademy.com",
-    phone:"+33 6 00 00 00 00",
+    phone:"+33 7 83 84 99 31",
   },
   footer: {
     tagline:"关于白酒与中国葡萄酒的独立教育资源。",
